@@ -1,0 +1,25 @@
+{
+  "title": "Buy Bitcoins",
+  "icon": "/test/icon.svg",
+  "lessons": [{
+    "title": "Set up Bitcoin Wallet (Electrum)",
+    "learn": "https://www.youtube.com/watch?v=DEH0eoppbyc",
+    "practice": "",
+  },{
+    "title": "Buy Bitcoin on Coinbase",
+    "learn": "https://www.youtube.com/watch?v=FPVr59ThnHE",
+    "practice": "",
+  },{
+    "title": "Move Bitcoin from Coinbase to Electrum",
+    "learn": "https://www.youtube.com/watch?v=9fvDp43rShA",
+    "practice": "",
+  },{
+    "title": "Backup Electrum Wallet",
+    "learn": "https://www.youtube.com/watch?v=Po7Vtl9xOD0",
+    "practice": "",
+  },{
+    "title": "Recover Electrum Wallet from a Seed",
+    "learn": "https://www.youtube.com/watch?v=y8Id3adVX78",
+    "practice": "",
+  }]
+}

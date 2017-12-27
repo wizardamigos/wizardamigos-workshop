@@ -13,7 +13,7 @@ minixhr(url, script => {
     height         : 100vh;
     margin         : 0;
   `
-  var image = bel`
+  var githubCornerLogo = bel`
     <svg width="250" height="250" viewBox="0 0 250 250" style="fill:#151513; color:#fff; position: absolute; top: 0; border: 0; right: 0;" aria-hidden="true">
       <defs></defs>
       <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z" />
@@ -38,7 +38,7 @@ minixhr(url, script => {
   `
   document.body.appendChild(bel`
     <a href="https://github.com/wizardamigos/workshop" target="_blank" class="github-corner" aria-label="View source on Github">
-      ${image}
+      ${githubCornerLogo}
       <style>
         .github-corner { position: absolute; top: 0; right: 0; transform: scale(0.6); }
         .github-corner:hover .octo-arm { animation:octocat-wave 560ms ease-in-out }
@@ -64,4 +64,113 @@ minixhr(url, script => {
   const el = app.render()
   el.style = "border: 5px dashed red; box-sizing: border-box; padding: 10px;"
   document.body.appendChild(el)
+  /******************************************************************************
+    USAGE (example)
+  ******************************************************************************/
+  const config = {
+    theme: {
+      '--lessonBGcolor' : '#0000ff',
+      '--arrowColor'    : 'magenta',
+      '--titleSize'     : '50px',
+    },
+    data: {
+      title: 'workshop',
+      iconURL: null,
+      lessons: [{ // example item
+        "title"    : "Move Bitcoin from Coinbase to Electrum",
+        "learn"    : "https://www.youtube.com/watch?v=9fvDp43rShA",
+        "practice" : "",
+      }],
+    },
+    css: csjs`
+      .workshop          {
+        --lessonBGcolor  : ${theme['--lessonBGcolor']};
+        --arrowColor     : ${theme['--arrowColor']};
+        --titleSize      : ${theme['--titleSize']};
+        display          : flex;
+        flex-direction   : column;
+        width            : 100%;
+        height           : 100%;
+      }
+      .navbar            {
+        display          : flex;
+        width            : 100%;
+        margin           : 0;
+      }
+      .arrow             {
+        background-color : grey;
+        font-size        : 150px;
+        font-weight      : 900;
+        cursor           : pointer;
+      }
+      .arrow:hover       {
+        background-color : black;
+        color            : var(--arrowColor);
+      }
+      .status            {
+        display          : flex;
+        justify-content  : center;
+        align-items      : center;
+        flex-grow        : 1;
+      }
+      .icon              {
+        height           : var(--titleSize};
+        margin-right     : 10px;
+      }
+      .title             {
+        font-size        : var(--titleSize};
+        font-family      : arial;
+        font-weight      : 900;
+      }
+      .lesson            {
+        display          : flex;
+        background-color : var(--lessonBGcolor);
+        flex-grow        : 1;
+      }
+    `
+  }
+  const workshop2 = workshop.config(config)
+
+  // @TODO: .... what about this ???
+  var customCSS = {
+    learn: css.video,
+    practice: css.codesandbox,
+    support: css.gitter,
+  }
+
+  const ws = workshop2({
+    data: {    
+      title: 'workshop',
+      iconURL: null,
+      lessons: [{ // example item
+        "title": "Move Bitcoin from Coinbase to Electrum",
+        "learn": "https://www.youtube.com/watch?v=9fvDp43rShA",
+        "practice": "",
+      }],
+    },
+    theme: {
+      '--lessonBGcolor' : '#0000ff',
+      '--arrowColor'    : 'magenta',
+      '--titleSize'     : '50px',
+    },
+    css: csjs`
+      .workshop {}
+      .navbar {}
+      .arrow {}
+      .status {}
+      .icon {}
+      .title {}
+      .lesson {}
+    `, /* {
+      workshop : 'workshop_4r5ty6',
+      navbar   : 'navbar_4r5ty6',
+      arrow    : 'arrow_4r5t6y',
+      status   : 'status_4r5t6y',
+      icon     : 'ic on_4r5t6y',
+      title    : 'title_4r5t6y',
+      lesson   : 'lesson_4r5t6y',
+    }, */
+  })
+  const element = ws.render()
+  document.body.appendChild(element)
 })

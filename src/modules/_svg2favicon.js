@@ -8,8 +8,9 @@ module.exports = {
 /******************************************************************************
   API
 ******************************************************************************/
-function makeSVGfavicon (svgURL, callback) {
+function makeSVGicon (svgURL, callback) {
   const img = document.createElement('img')
+  // @XXX: better? https://github.com/tsayen/dom-to-image/tree/master/src
   img.onload = event => {
     canvas.width = img.width
     canvas.height = img.height
@@ -19,9 +20,10 @@ function makeSVGfavicon (svgURL, callback) {
     ctx.drawImage(img, ...dim)
     drawTriangles(ctx, dim)
     const faviconURL = canvas.toDataURL()
-    callback(error, faviconURL)
+    callback(null, faviconURL)
   }
   img.onerror = event => callback(event)
+  img.setAttribute('crossOrigin', 'anonymous')
   img.setAttribute('src', svgURL)
 }
 function setFavicon (faviconURL) {
@@ -30,7 +32,7 @@ function setFavicon (faviconURL) {
       favicon = document.createElement('link')
       favicon.setAttribute('rel', 'icon')
       favicon.setAttribute('type', 'image/png')
-      document.head.appendChild(favicon)    
+      document.head.appendChild(favicon)
     }
     return favicon
   })(document.querySelector('link[rel*="icon"]'))

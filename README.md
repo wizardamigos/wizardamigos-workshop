@@ -1,5 +1,5 @@
-# WORKSHOP
-Module for creating workshops for teaching coding. Workshops can be standalone or combined into a curriculum with one or many topics and used in [codecamps](https://github.com/wizardamigos/codecamp).
+# wizardamigos workshop
+Module for creating workshops for teaching coding. Workshops can be standalone or combined into a curriculum with one or many topics and used in [codecamps](https://github.com/wizardamigos/wizardamigos-codecamp).
 
 
 ## module
@@ -53,4 +53,3 @@ document.body.appendChild(el)
 
 ### 3. js_web3_object
 * ...
-

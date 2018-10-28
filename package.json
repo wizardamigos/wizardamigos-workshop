@@ -1,14 +1,16 @@
 {
-  "name": "workshop",
-  "version": "1.0.0",
+  "name": "wizardamigos-workshop",
+  "version": "0.0.0",
   "description": "module for making workshop apps",
-  "main": "src/index.js",
+  "main": "src/workshop.js",
   "scripts": {
+    "start": "budo demo.js:bundle.js --title $npm_package_name --force-default-index --ssl --live --open",
+    "build": "browserify demo.js -o bundle.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/wizardamigos/workshop.git"
+    "url": "git+https://github.com/wizardamigos/wizardamigos-workshop.git"
   },
   "keywords": [
     "workshop",
@@ -17,7 +19,15 @@
   "author": "@serapath",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/wizardamigos/workshop/issues"
+    "url": "https://github.com/wizardamigos/wizardamigos-workshop/issues"
   },
-  "homepage": "https://github.com/wizardamigos/workshop#readme"
+  "homepage": "https://github.com/wizardamigos/wizardamigos-workshop#readme",
+  "devDependencies": {
+    "budo": "^11.3.2"
+  },
+  "dependencies": {
+    "bel": "^6.0.0",
+    "belmark": "^2.0.3",
+    "csjs-inject": "^1.0.1"
+  }
 }

@@ -1,25 +1,39 @@
 {
   "title": "Buy Bitcoins",
+  "version": "1.0.0",
   "icon": "/test/icon.svg",
+  "chat": "https://gitter.im/ethereum/play",
   "lessons": [{
     "title": "Set up Bitcoin Wallet (Electrum)",
-    "learn": "https://www.youtube.com/watch?v=DEH0eoppbyc",
-    "practice": "",
+    "lesson": "https://www.youtube.com/watch?v=DEH0eoppbyc",
+    "tool": "",
+    "info": "./set-up-bitcoin-wallet.md",
   },{
     "title": "Buy Bitcoin on Coinbase",
-    "learn": "https://www.youtube.com/watch?v=FPVr59ThnHE",
-    "practice": "",
+    "lesson": "https://www.youtube.com/watch?v=FPVr59ThnHE",
+    "tool": "",
+    "info": "./buy-bitcoin-on-coinbase.md"
   },{
     "title": "Move Bitcoin from Coinbase to Electrum",
-    "learn": "https://www.youtube.com/watch?v=9fvDp43rShA",
-    "practice": "",
+    "lesson": "https://www.youtube.com/watch?v=9fvDp43rShA",
+    "tool": "",
+    "info": "./move-bitcoin-from-coinbase-to-electrum.md",
   },{
     "title": "Backup Electrum Wallet",
-    "learn": "https://www.youtube.com/watch?v=Po7Vtl9xOD0",
-    "practice": "",
+    "lesson": "https://www.youtube.com/watch?v=Po7Vtl9xOD0",
+    "tool": "",
+    "info": "./backup-electrum-wallet.md",
   },{
     "title": "Recover Electrum Wallet from a Seed",
-    "learn": "https://www.youtube.com/watch?v=y8Id3adVX78",
-    "practice": "",
-  }]
+    "lesson": "https://www.youtube.com/watch?v=y8Id3adVX78",
+    "tool": "",
+    "info": "./recover-electrum-wallet-from-a-seed.md",
+  }],
+  "needs": [
+    "https://ninabreznik.com/finance/workshop.json",
+    "https://vitalik.com/bitcoin/workshop.json"
+  ],
+  "unlocks": [
+    "https://karl.com/run-bitcoin-business/workshop.json"
+  ]
 }

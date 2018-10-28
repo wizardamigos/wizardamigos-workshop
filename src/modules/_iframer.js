@@ -48,12 +48,12 @@ const _channels = { // INBOUND
       // @TODO: maybe emit change event
       const dom = self[_DOM]
       // @TODO: if DOM is currently detached, then the next .render() call should update it...
-      if (dom) const old = dom.view
-      if (old) const container = old.parentElement
+      if (dom) var old = dom.view
+      if (old) var container = old.parentElement
       if (container) {
         self[_DOM] = _template(self)
         container.replaceChild(self[_DOM].view, old)
-      }    
+      }
     }
   }
 }
@@ -88,7 +88,7 @@ const _STATE = Symbol('state')
 // }*/
 // var player = iframer(/* iframer.prototype.arguments */)
 // element = player.render()
-// 
+//
 // player = iframer({
 //   data: {
 //     class: classes.video,
@@ -101,7 +101,7 @@ const _STATE = Symbol('state')
 //   },
 //   // children: [],
 // }, [])
-// 
+//
 // args = [{
 //   class: classes.video,
 //   src: "https://www.youtube.com/watch?v=9fvDp43rShA",
@@ -111,10 +111,10 @@ const _STATE = Symbol('state')
 //     '--baz': '50px',
 //   }
 //   css: {
-//     
+//
 //   }
 // }, []]
-// 
+//
 // function iframer (data = {}, children = []) {
 //   var self = Object.create(iframer.prototype)
 //   Object.keys(data).forEach(key => {
@@ -123,17 +123,17 @@ const _STATE = Symbol('state')
 //     if (key === 'theme') { self.update(key, data[key]) }
 //   })
 //   children.forEach(child => { })
-// 
+//
 //   if (Object.keys(theme).length) this.theme = theme
 //   if (Object.keys(css).length) this.css = css
 // }
 // iframer.prototype.update = function (key, value) {
-//   
+//
 // }
 // iframer.prototype.ondata = function ({ type, key, value }) {
-//   
+//
 // }
-// 
+//
 // player = iframer(args)
 // element = player.render()
 
@@ -198,7 +198,7 @@ const _STATE = Symbol('state')
 //   const lesson = self[_LESSON]
 //   self.jump(lesson + 1)
 //   self.onNext(lesson + 1)
-// 
+//
 // }
 /******************************************************************************
   HELPERS

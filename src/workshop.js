@@ -5,8 +5,8 @@ var belmark = require('belmark')
 module.exports = workshop
 
 async function workshop ({ workshop, theme = {} } = {}) {
-  debugger
-  var data = workshop ? require(workshop) : require('./workshop.json')
+  // var data = workshop ? require(workshop) : await fetch('/workshop.json')
+  var data = await fetch(new URL('./workshop.json', location.href).href).then(response => response.json())
   var font_url = theme['--font']
   var lessons = data.lessons
   var chat = data.chat
@@ -55,15 +55,50 @@ async function workshop ({ workshop, theme = {} } = {}) {
   var stats = bel`<span class=${css.stats}>Lesson ${lesson + 1}/${lessons.length}</span>`
   var infoButton = bel`<button class="${css.infoViewButton} ${css.button}" title='infoButton' onclick=${changeView}>Info</button>`
   var chatButton = bel`<button class="${css.chatViewButton} ${css.button}" title='chatButton' onclick=${changeView}>Chat</button>`
+
+  var needsOpen = false
+  var unlocksOpen = false
+  function needs () {
+    if (needsOpen) {
+      var dropdown = document.querySelector('#needs')
+      dropdown.parentElement.removeChild(dropdown)
+      needsOpen = false
+    } else {
+      var el = bel`
+      <ul id="needs" style="position: absolute; top: 75px; left: 0; width:100px; height: 100px; background-color: pink;">
+      ${data.needs.map(url => bel`<li><a href="${url}" target="_blank">${url}</a></li>`)}
+      </ul>
+      `
+      document.body.appendChild(el)
+      needsOpen = true
+    }
+  }
+  function unlocks () {
+    if (unlocksOpen) {
+      var dropdown = document.querySelector('#unlocks')
+      dropdown.parentElement.removeChild(dropdown)
+      unlocksOpen = false
+    } else {
+      var el = bel`
+      <ul id="unlocks" style="position: absolute; top: 75px; right: 0; width:100px; height: 100px; background-color: pink;">
+      ${data.unlocks.map(url => bel`<li><a href="${url}" target="_blank">${url}</a></li>`)}
+      </ul>
+      `
+      document.body.appendChild(el)
+      unlocksOpen = true
+    }
+  }
   var app = bel`
     <div class="${css.content}">
       <div class=${css.menu}>
+        <button class=${css.button} onclick=${needs}> ${'▼'} </button>
         <button class=${css.button} onclick=${previous}> ${'<'} </button>
         <span class=${css.head}>
           <span class=${css.banner}>${logo} ${series} ${stats}</span>
           ${title}
         </span>
         <button class=${css.button} onclick=${next}> ${'>'} </button>
+        <button class=${css.button} onclick=${unlocks}> ${'▼'} </button>
       </div>
       <div class=${css.container}>
         <div class=${css.narrow}>

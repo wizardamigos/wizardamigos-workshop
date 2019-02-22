@@ -11,7 +11,7 @@ const workshop = require('../') // no default theme initialised
 setTimeout(async () => {
   // @TODO: every FIELD can be either an OBJECT or URL to a JSON
   //        and it has DEFAULTS
-  const data = '/demo/workshop.json'
+  const data = './demo/workshop.json'
   const opts = {
     config: {
       home_link: 'http://wizardamigos.com/',

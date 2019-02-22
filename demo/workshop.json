@@ -1,0 +1,39 @@
+{
+  "title": "Buy Bitcoins",
+  "version": "1.0.0",
+  "icon": "/demo/icon.svg",
+  "chat": "https://gitter.im/ethereum/play/~embed",
+  "lessons": [{
+    "title": "Set up Bitcoin Wallet (Electrum)",
+    "lesson": "https://www.youtube.com/embed/DEH0eoppbyc",
+    "tool": "",
+    "info": "/demo/docs/set-up-bitcoin-wallet.md"
+  },{
+    "title": "Buy Bitcoin on Coinbase",
+    "lesson": "https://www.youtube.com/embed/FPVr59ThnHE",
+    "tool": "",
+    "info": "/demo/docs/buy-bitcoin-on-coinbase.md"
+  },{
+    "title": "Move Bitcoin from Coinbase to Electrum",
+    "lesson": "https://www.youtube.com/embed/9fvDp43rShA",
+    "tool": "",
+    "info": "/demo/docs/move-bitcoin-from-coinbase-to-electrum.md"
+  },{
+    "title": "Backup Electrum Wallet",
+    "lesson": "https://www.youtube.com/embed/Po7Vtl9xOD0",
+    "tool": "",
+    "info": "/demo/docs/backup-electrum-wallet.md"
+  },{
+    "title": "Recover Electrum Wallet from a Seed",
+    "lesson": "https://www.youtube.com/embed/y8Id3adVX78",
+    "tool": "",
+    "info": "/demo/docs/recover-electrum-wallet-from-a-seed.md"
+  }],
+  "needs": [
+    "https://ninabreznik.com/finance/workshop.json",
+    "https://vitalik.com/bitcoin/workshop.json"
+  ],
+  "unlocks": [
+    "https://karl.com/run-bitcoin-business/workshop.json"
+  ]
+}

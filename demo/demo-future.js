@@ -1,4 +1,4 @@
-var usage = require('./usage.js')
+var usage = require('usage')
 
 var el = usage({
   repo: 'https://github.com/wizardamigos/workshop',

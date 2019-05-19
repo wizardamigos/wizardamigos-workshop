@@ -1,10 +1,10 @@
 {
   "name": "wizardamigos-workshop",
-  "version": "0.2.1",
+  "version": "0.2.2",
   "description": "module for making wizardamigos themed workshop apps",
   "main": "src/workshop.js",
   "scripts": {
-    "start": "budo demo/demo.js:bundle.js --title $npm_package_name --force-default-index --ssl --live --open",
+    "start": "budo demo/demo.js:bundle.js --title $npm_package_name --ssl --live --open --cors",
     "build": "browserify demo/demo.js -o bundle.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -15,21 +15,19 @@
   "keywords": [
     "workshop",
     "workshopper",
-    "workshopping"
+    "workshopping",
+    "wizardamigos"
   ],
-  "author": "@serapath",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/wizardamigos/wizardamigos-workshop/issues"
   },
   "homepage": "https://github.com/wizardamigos/wizardamigos-workshop#readme",
   "devDependencies": {
+    "belmark": "^2.0.3",
     "budo": "^11.6.0"
   },
   "dependencies": {
-    "bel": "^6.0.0",
-    "belmark": "^2.0.3",
-    "csjs-inject": "^1.0.1",
-    "workshopping": "^0.1.0"
+    "workshopping": "^0.2.8"
   }
 }

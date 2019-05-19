@@ -11,8 +11,8 @@ var colors = {
 //    yellow: "#F2CD5D",
 /**/    androidGreen: "#9BC53D"
 }
-module.exports = {
-  '--font': 'src/PIXELADE.ttf',
+module.exports = font => ({
+  '--font': font,
   menu_minHeight: '90px',
   menu_height: '10%',
   menu_border: '5px solid #d6dbe1',
@@ -57,4 +57,4 @@ module.exports = {
   welcome_font_size: 'calc(10px + 0.3vw)',
   welcome_padding_topBottom: '10%',
   welcome_text_color: '#43409a',
-}
+})
